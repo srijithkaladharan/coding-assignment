@@ -15,19 +15,24 @@ class TransactionModel:
             for file_name in files:
                 file_obj = open(directory["received"] + file_name)
 
-                file_reader = csv.reader(file_obj)
+                file_reader = list(csv.reader(file_obj))
 
-                for row in file_reader:
-                    if int(row[0]) == id:
-                        productId = row[1].lstrip()
+                if (
+                    int(file_reader[len(file_reader) - 1][0]) >= id
+                    and int(file_reader[0][0]) <= id
+                ):
+                    element = cls.find_element_from_list(file_reader, id)
+                    if element:
+                        productId = element[1].lstrip()
                         prodName = cls.get_prod_name(productId)
 
                         return {
-                            "transactionId": int(row[0]),
+                            "transactionId": int(element[0]),
                             "productName": prodName,
-                            "transactionAmount": float(row[2]),
-                            "transactionDatetime": row[3],
+                            "transactionAmount": float(element[2]),
+                            "transactionDatetime": element[3].lstrip(),
                         }
+
             return {"message": "Transaction with id:" + str(id) + " not found."}
         return {"message": "Sorry! We do not have any transaction data."}
 
@@ -121,4 +126,21 @@ class TransactionModel:
         for eachProd in prod_reader:
             if eachProd[0] == prodId:
                 return eachProd[1].lstrip()
+
+    @classmethod
+    def find_element_from_list(cls, elementList, checkVal):
+        start = 0
+        last = len(elementList) - 1
+
+        while start <= last:
+            mid = start + (last - start) // 2
+            midVal = int(elementList[mid][0])
+            if midVal == checkVal:
+                return elementList[mid]
+            elif midVal < checkVal:
+                start = mid + 1
+            else:
+                last = mid - 1
+
+        return False
 
