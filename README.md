@@ -43,7 +43,7 @@ data-file directory structure:
 
 data-file/received/   -> Landing Directory where the incoming files from upstream/source systems would reside.
 
-data-file/refrence/   -> Contains the static reference file (Products.csv)
+data-file/reference/   -> Contains the static reference file (Products.csv)
 
 --------------------------------------------------------------------------------------------
 
