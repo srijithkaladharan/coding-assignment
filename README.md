@@ -35,13 +35,14 @@ Available API end points:
 
 2) http://127.0.0.1:8080/assignment/transactionSummaryByProducts/{last_n_days}
 
-3) http://127.0.0.1:8080//assignment/transactionSummaryByCities/{last_n_days
+3) http://127.0.0.1:8080/assignment/transactionSummaryByCities/{last_n_days
 
 -------------------------------------------------------------------------------------------
 
 data-file directory structure:
 
 data-file/received/   -> Landing Directory where the incoming files from upstream/source systems would reside.
+
 data-file/refrence/   -> Contains the static reference file (Products.csv)
 
 --------------------------------------------------------------------------------------------
