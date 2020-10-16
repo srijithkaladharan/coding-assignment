@@ -72,8 +72,9 @@ class TransactionModel:
             }
         return {"message": "Sorry!, We do not have any transaction data"}
 
+    # to get transaction summary by products
     @classmethod
-    def get_trans_summary_by_cities(cls, n_days):  # to get summary by mfg cities
+    def get_trans_summary_by_cities(cls, n_days):
         summary_by_prod = cls.get_trans_summary_by_prods(n_days)
         if "summary" not in summary_by_prod.keys():
             return summary_by_prod
