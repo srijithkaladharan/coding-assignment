@@ -35,7 +35,7 @@ Available API end points:
 
 2) http://127.0.0.1:8080/assignment/transactionSummaryByProducts/{last_n_days}
 
-3) http://127.0.0.1:8080/assignment/transactionSummaryByCities/{last_n_days
+3) http://127.0.0.1:8080/assignment/transactionSummaryByCities/{last_n_days}
 
 -------------------------------------------------------------------------------------------
 
