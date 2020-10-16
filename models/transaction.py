@@ -13,7 +13,6 @@ class TransactionModel:
 
         if len(files) != 0:
             for file_name in files:
-                print(file_name)
                 file_obj = open(directory["received"] + file_name)
 
                 file_reader = csv.reader(file_obj)
