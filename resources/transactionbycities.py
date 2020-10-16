@@ -1,7 +1,7 @@
 from flask_restful import Resource
 from models.transaction import TransactionModel
 from time import sleep
-from flask import stream_with_context, request, Response
+from flask import stream_with_context, Response
 
 
 class TransSummaryByCities(Resource):
