@@ -78,7 +78,7 @@ class TransactionModel:
 
     # to get transaction summary by products
     @classmethod
-    def get_trans_summary_by_cities(cls, n_days):
+    def get_trans_summary_by_cities(cls, n_days: int):
         summary_by_prod = cls.get_trans_summary_by_prods(n_days)
         if "summary" not in summary_by_prod.keys():
             return summary_by_prod
